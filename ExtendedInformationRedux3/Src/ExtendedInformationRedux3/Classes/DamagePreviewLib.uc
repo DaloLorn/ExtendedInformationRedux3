@@ -590,6 +590,7 @@ static function GetWeaponDamagePreview(X2Effect_ApplyWeaponDamage WepDamEffect, 
 		TestEffectParams.AbilityResultContext.HitResult = eHit_Crit;
 		DamageItemCrit.Min += EffectTemplate.GetAttackingDamageModifier_CH(EffectState, SourceUnit, Damageable(TargetUnit), AbilityState, TestEffectParams, NormalDamage.Min+CritDamage.Min, WepDamEffect);
 		DamageItemCrit.Max += EffectTemplate.GetAttackingDamageModifier_CH(EffectState, SourceUnit, Damageable(TargetUnit), AbilityState, TestEffectParams, NormalDamage.Max+CritDamage.Max, WepDamEffect);
+		OriginalPierce += EffectTemplate.GetExtraArmorPiercing(EffectState, SourceUnit, Damageable(TargetUnit), AbilityState, TestEffectParams);
 		`ADDDAMITEM(Normal);
 		DamageItem=DamageItemCrit;
 		`ADDDAMITEM(Crit);
